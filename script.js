@@ -21,6 +21,7 @@ const myQuestions = [
          c: "other arrays",
          d: "all of the above"
      },
+     correctAnswer: "d"
  },
  {
      question: "Who invented JavaScript?",
@@ -52,6 +53,57 @@ const myQuestions = [
      },
      correctAnswer: "d"
  },
+ {
+     question: "Which of the following is not a JavaScript primitive?",
+     answers: {
+         a: "number",
+         b: "string",
+         c: "float",
+         d: "boolean"
+     },
+     correctAnswer: "c"
+ },
+ {
+    question: "What does JSON stand for?",
+    answers: {
+        a: "JavaScript Objective Notation",
+        b: "Java Set Object Notation",
+        c: "Java Script Object Nomenclature",
+        d: "Javascript Object Notation"
+    },
+    correctAnswer: "d"
+},
+{
+    question: "What will the output of 'console.log(typeof NaN)' be?",
+    answers: {
+        a: "NaN",
+        b: "number",
+        c: "null",
+        d: "undefined"
+    },
+    correctAnswer: "b"
+},
+{
+    question: "What will the result of 'console.log(('b' + 'a' + + 'a' + 'a').toLowerCase())be?",
+    answers: {
+        a: "bananaa",
+        b: "baaa",
+        c: "banana",
+        d: "ba+aa"
+    },
+    correctAnswer: "c"
+},
+{
+    question: "How does a while loop start?",
+    answers: {
+        a: "while (i <= 10)",
+        b: "while i = 1 to 10",
+        c: "while (i = 0; i++ = 10",
+        d: "while (i <= 10; i++)"
+    },
+    correctAnswer: "a"
+},
+
 
 ];
 
