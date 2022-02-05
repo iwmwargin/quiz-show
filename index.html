@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="assets/css/style.css">
     <title>Welcome To The Quiz Show</title>
 </head>
 <body>
-    <div id="quiz"></div>
-    <button id="submit">Start Quiz</button>
-    <div id="results"></div>
+    <header>
+        <!-- High score and time left-->
+        <a href=""><strong>Scoreboard</strong></i></a>
+        <div><strong>Time:</strong> <span id="timerEl"></span></div>
+     </header>
+
+    <div class="container">
+        <div id="questions" class="hide">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn" id="1">Answer A</button>
+                <button class="btn" id="2">Answer B</button>
+                <button class="btn" id="3">Answer C</button>
+                <button class="btn" id="4">Answer D</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
 
 
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
