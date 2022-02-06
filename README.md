@@ -18,11 +18,14 @@ A website that provides the user with a quiz that is primarily made using JavaSc
 
 
 ## Images of Website
-Blank Website
-<img src="https://github.com/iwmwargin/friendly-parakeet/blob/main/assets/images/Empty.png">
+Start of Quiz
+<img src="https://github.com/iwmwargin/quiz-show/blob/main/assets/images/startQuiz.png">
 
-Website with RG Password
-<img src="https://github.com/iwmwargin/friendly-parakeet/blob/main/assets/images/Password.png">
+A Question
+<img src="https://github.com/iwmwargin/quiz-show/blob/main/assets/images/question.png">
+
+End of Quiz
+<img src="https://github.com/iwmwargin/quiz-show/blob/main/assets/images/endGame.png">
 
 ### Contribution
 Made by Eric Wargin
