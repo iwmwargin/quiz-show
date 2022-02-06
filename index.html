@@ -10,10 +10,14 @@
 <body>
     <header>
         <!-- High score and time left-->
-        <a href=""><strong>Scoreboard</strong></i></a>
-        <div><strong>Time:</strong> <span id="timerEl"></span></div>
+        <a href=""><strong>Play Again!</strong></i></a>
+        <div><strong>Time:</strong> <span id="timerEl" class="hide"></span></div>
      </header>
-
+     <div id="text">
+         <p>Welcome to the JavaScript Quiz Show!</p>
+     </br><br>
+         <p>Please hit the start button and answer the 10 multiple choice questions. After you select an answer, please hit the Submit button to go to the next question.</p>
+     </div>
     <div class="container">
         <div id="questions" class="hide">
             <div id="question">Question</div>
@@ -26,8 +30,37 @@
         </div>
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="next-btn" class="next-btn btn hide">Submit</button>
+            <div id="end" class="hide">
+                <p>Congratulations!</p>
+                <button id="end-game" class="over-btn btn hide">Start Over</button>
+
+              <div class="text">
+                <h2 class="font-weight-bold">
+                  Your final score is <span id="finalScore"></span> !
+                </h2>
+                <form>
+                  <p class="intials-form">
+                    Enter your initials:
+                    <input
+                      id="initialInput"
+                      class="form-control "
+                      type="text"
+                    />
+                    <button
+                      type="submit"
+                      id="submitInitialBtn"
+                    
+                    >
+                      Submit
+                    </button>
+                  </p>
+                </form>
+              </div>
+            </div>
         </div>
+    </div>
+    
 
 
 <script src="assets/js/script.js"></script>

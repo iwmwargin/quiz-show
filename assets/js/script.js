@@ -1,7 +1,6 @@
 var time = 75
-var timerEl = document.getElementById("timerEl");
 var timer;
-
+var correctAnswer = 0
 var myQuestions = [
     {
         question: "Which of the following function of Array object reverses the order of the elements of an array?",
@@ -21,7 +20,7 @@ var myQuestions = [
             c: "other arrays",
             d: "all of the above"
         },
-        correctAnswer: "d"
+        correctAnswer: "all of the above"
     },
     {
         question: "Who invented JavaScript?",
@@ -31,7 +30,7 @@ var myQuestions = [
             c: "Jeff Samberg",
             d: "William Paxton"
         },
-        correctAnswer: "a"
+        correctAnswer: "Brendan Eich"
     },
     {
         question: "Which of the following is true about variable naming conventions in JavaScript?",
@@ -41,7 +40,7 @@ var myQuestions = [
             c: "Both of the above",
             d: "None of the above"
         },
-        correctAnswer: "c"
+        correctAnswer: "Both of the above"
     },
     {
         question: "In what year was JavaScript created?",
@@ -51,7 +50,7 @@ var myQuestions = [
             c: "2009",
             d: "1995"
         },
-        correctAnswer: "d"
+        correctAnswer: "1995"
     },
     {
         question: "Which of the following is not a JavaScript primitive?",
@@ -61,7 +60,7 @@ var myQuestions = [
             c: "float",
             d: "boolean"
         },
-        correctAnswer: "c"
+        correctAnswer: "float"
     },
     {
        question: "What does JSON stand for?",
@@ -71,7 +70,7 @@ var myQuestions = [
            c: "Java Script Object Nomenclature",
            d: "Javascript Object Notation"
        },
-       correctAnswer: "d"
+       correctAnswer: "Javascript Object Notation"
    },
    {
        question: "What will the output of 'console.log(typeof NaN)' be?",
@@ -81,7 +80,7 @@ var myQuestions = [
            c: "null",
            d: "undefined"
        },
-       correctAnswer: "b"
+       correctAnswer: "number"
    },
    {
        question: "What will the result of 'console.log(('b' + 'a' + + 'a' + 'a').toLowerCase())be?",
@@ -91,7 +90,7 @@ var myQuestions = [
            c: "banana",
            d: "ba+aa"
        },
-       correctAnswer: "c"
+       correctAnswer: "banana"
    },
    {
        question: "How does a while loop start?",
@@ -101,13 +100,15 @@ var myQuestions = [
            c: "while (i = 0; i++ = 10)",
            d: "while (i <= 10; i++)"
        },
-       correctAnswer: "a"
+       correctAnswer: "while (i <= 10)"
    },
    
    
    ];
-   var quizContainer = document.getElementById('quiz');
-   var resultsContainer = document.getElementById('results');
+
+   // global variables
+   var timerEl = document.getElementById("timerEl");
+   var startOver = document.getElementById("end-game");
    var startButton = document.getElementById('start-btn');
    var question = document.getElementById("question");
    var quest = document.getElementById("questions");
@@ -117,16 +118,23 @@ var myQuestions = [
    var answerFour = document.getElementById("4");
    var next = document.getElementById("next-btn");
    var number = 0;
+   var end = document.getElementById("end");
+   var start = document.getElementById("text");
    
+   // Function that starts quiz, timer and will end quiz at 0 seconds
    function startQuiz() {
+     text.style.display = "none";
+     end.style.display = "none";
+     timerEl.style.display = "block";
      timer = setInterval(function(){
        time = time - 1
        timerEl.textContent = time;
        if(time === 0){
-         endQuiz();
+        endQuiz();
        }
      }, 1000);
      
+     // will display appropriate question and corresponding potential answers on buttons
      question.textContent = myQuestions[number].question;
      quest.style.display = "block";
      answerOne.textContent = myQuestions[number].answers.a;
@@ -137,28 +145,29 @@ var myQuestions = [
 
    }
 
+
+   // function that determines what happens when the next button is hit to cycle through questions
    function displayNext(event) {
-    
     next.style.display = "block";
     var answer = myQuestions[number].correctAnswer;
     console.log(event.target.innerHTML)
     console.log(answer)
     if(answer === event.target.innerHTML) {
       console.log(event)
-     var correctAnswer = document.getElementById(event.target.id)
-     correctAnswer.style.backgroundColor = "light-green";
+     var correctAnswer = document.getElementById(event.target.id);
+     correctAnswer.style.color = "light-green";
      console.log(correctAnswer)
     }
     number = number + 1;
+    // quiz ends when you run out of questions
     if(number >= myQuestions.length) {
       endQuiz();
     }
-    
-    
+   };
 
-   }
-
+   
   function nextQuestion() {
+    
     question.textContent = myQuestions[number].question;
     quest.style.display = "block";
     answerOne.textContent = myQuestions[number].answers.a;
@@ -170,8 +179,11 @@ var myQuestions = [
   function endQuiz() {
     quest.style.display = "none";
     next.style.display = "none";
-    
+    end.style.display = "block";
+    timerEl.style.display = "none";
   }
+  
+  
 
    startButton.addEventListener("click", startQuiz);
    answerOne.addEventListener("click", displayNext);
@@ -179,7 +191,6 @@ var myQuestions = [
    answerThree.addEventListener("click", displayNext);
    answerFour.addEventListener("click", displayNext);
    next.addEventListener("click", nextQuestion);
-
 
  
  
