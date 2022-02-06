@@ -28,9 +28,20 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 30px 50px;
-    background-color:  rgb(21, 102, 168 );
+    padding: 20px 40px;
+    background-color:  rgb(114, 131, 146);
     font-size: 20px;
+}
+
+footer {
+	text-align: center;
+	background-color:  rgb(114, 131, 146);
+	font-size: 20px;
+	padding:20px 40px;
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
 }
 
 .container {
