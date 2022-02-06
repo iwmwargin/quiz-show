@@ -15,7 +15,7 @@ A website that provides the user with a quiz that is primarily made using JavaSc
 * Have not been able to utilize localStorage for this quiz.
 
 ## Website
-<a href="https://iwmwargin.github.io/quiz-show/" target="_blank">
+<a href="https://iwmwargin.github.io/quiz-show/" target="_blank">Quiz</a>
 
 ## Images of Website
 Start of Quiz
