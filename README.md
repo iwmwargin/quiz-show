@@ -11,7 +11,7 @@ A website that provides the user with a quiz that is primarily made using JavaSc
 ## Issues
 * I cannot get the button to change to the desired color when you select a right or wrong answer.
 * Have not been able to figure out how to prevent multiple clicks on the same answer.
-* Have not been able to track time as score or save it with initials to high score.
+* Have not been able save score with initials and add it to high score.
 * Have not been able to utilize localStorage for this quiz.
 
 ## Website
