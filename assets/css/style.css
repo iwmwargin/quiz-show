@@ -76,11 +76,11 @@ footer {
 	border-color: black;
 }
 
-.btn.correct {
+.correct {
 	background-color: green;
 }
 
-.btn.correct {
+.wrong {
 	background-color: red;
 }
 
@@ -104,7 +104,7 @@ footer {
     margin-bottom: 20px;
 }
 
-  .hide{
+.hide{
 	display: none;
 }
 

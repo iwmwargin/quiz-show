@@ -93,14 +93,14 @@ var myQuestions = [
     correctAnswer: "banana",
   },
   {
-    question: "How does a while loop start?",
+    question: "What is 2 + 2?",
     answers: {
-      a: "while (i <= 10)",
-      b: "while i = 1 to 10",
-      c: "while (i = 0; i++ = 10)",
-      d: "while (i <= 10; i++)",
+      a: "4",
+      b: "0",
+      c: "Canada Goose",
+      d: "Salacious Crumb",
     },
-    correctAnswer: "while (i <= 10)",
+    correctAnswer: "4",
   },
 ];
 
@@ -117,10 +117,12 @@ var answerFour = document.getElementById("4");
 var next = document.getElementById("next-btn");
 var end = document.getElementById("end");
 var start = document.getElementById("text");
-var time = 75;
+var highScore = document.getElementById("");
+var submit = document.getElementById("submitInitialBtn");
+var btn = document.getElementById("btn");
+
 var time = 75;
 var timer;
-var correctAnswer = 0;
 var correctAnswer = 0;
 var number = 0;
 var score = 0;
@@ -133,7 +135,7 @@ function startQuiz() {
   timer = setInterval(function () {
     time = time - 1;
     timerEl.textContent = time;
-    if (time === 0) {
+    if (time <= 0) {
       endQuiz();
     }
   }, 1000);
@@ -151,20 +153,25 @@ function startQuiz() {
 // function that determines what happens when the next button is hit to cycle through questions
 function displayNext(event) {
   console.log(event);
-  next.style.display = "block";
+  next.style.display = "none";
   var answer = myQuestions[number].correctAnswer;
   if (answer === event.target.innerHTML) {
     var correctAnswer = document.getElementById(event.target.id);
     // keeps track of score
     score = score + 5;
-    // want this to change color but not working
-    correctAnswer.style.backgroundColor = "light-green";
+    correctAnswer.classList.add("correct");
   }
+  else {
+      time = time - 10;
+  }
+  
   number = number + 1;
+  
   // quiz ends when you run out of questions
   if (number >= myQuestions.length) {
     endQuiz();
   }
+  else(nextQuestion()); 
 }
 
 function nextQuestion() {
@@ -182,6 +189,28 @@ function endQuiz() {
   end.style.display = "block";
   timerEl.style.display = "none";
   finalScore.textContent = score;
+
+}
+
+function storeHighScores(event) {
+  event.preventDefault();
+
+  if(initialInput.value === "") {
+    alert("Please enter your initials!");
+    return;
+  }
+  quest.style.display = "none";
+  next.style.display = "none";
+  end.style.display = "block";
+  timerEl.style.display = "none";
+  finalScore.textContent = score;
+
+
+}
+
+
+function highScore() {
+    localStorage.setItem("initialInput", "score");
 }
 
 startButton.addEventListener("click", startQuiz);
@@ -190,3 +219,5 @@ answerTwo.addEventListener("click", displayNext);
 answerThree.addEventListener("click", displayNext);
 answerFour.addEventListener("click", displayNext);
 next.addEventListener("click", nextQuestion);
+submit.addEventListener("click", highScore);
+
